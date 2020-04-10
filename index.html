@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Bhaskara's Method</title>
+</head>
+
+
+<script>
+    function warning() {
+    }
+
+    function warning_out() {
+        var paragrafo = document.getElementById("paragrafo");
+        paragrafo.innerHTML = null;
+    }
+
+    function calcular() {
+        var delta = document.getElementById("delta");
+        delta.style.backgroundColor = "rbga(1,1,1,1)" ;
+        delta.style.display = "block";
+      
+
+        var b = document.querySelector("input#b");
+        var b2 = document.querySelector("span#b2_txt");
+
+        b2.innerHTML = Number(b.value);
+
+        var a = document.querySelector("input#a");
+        var a_eq = document.querySelector("span#a_txt");
+
+        a_eq.innerHTML = Number(a.value);;
+
+        var c = document.querySelector("input#c");
+        var c_eq = document.querySelector("span#c_txt");
+
+        c_eq.innerHTML = Number(c.value);
+
+        var delta_res = document.querySelector("span#delta_res");
+        delta_res.innerHTML = b2.innerHTML * b2.innerHTML - 4 * a_eq.innerHTML * c_eq.innerHTML;
+
+        if(delta_res.innerHTML > 0){
+            var raizes = document.getElementById("raizes");
+            raizes.innerHTML = "2";
+        }
+
+        if(delta_res.innerHTML == 0){
+            var raizes = document.getElementById("raizes");
+            raizes.innerHTML = "1";
+        }
+
+        if(delta_res.innerHTML < 0){
+            var raizes_txt = document.getElementById("raizes_txt");
+            raizes_txt.innerHTML = "Nao há raízes reais.";
+        }
+
+
+//  bhaskara
+        var delta = document.getElementById("bhaskara");
+        delta.style.backgroundColor = "rbga(1,1,1,1)" ;
+        delta.style.display = "block";
+
+    }
+
+</script>
+
+<body id="body">
+    <h1 id="Title"> Bhaskara's Method </h1>
+    <div id="body-div">
+
+        <article id="article-div">
+            <h1 id="calc"> Calculadora de Equação do 2º grau </h1>
+            <h2>Resolve equações do segundo grau mostrando a resolução e gráfico.</h2>
+
+            <h1 id="equacao"> <span id="a">a</span>x<sup>2</sup> + <span id="b">b</span>x + <span id="c">c</span> = 0
+            </h1>
+
+            <div id="equacao" onmouseover="warning()" onmouseout="warning_out()">
+                <p id="equacao">
+
+                    <input id="a" placeholder="a"> <span id="x">x</span><sup>2</sup> +
+                    <input id="b" placeholder="b"> <span id="x">x</span> +
+                    <input id="c" placeholder="c"> = 0
+                    <br>
+                    <br>
+
+                    <input type="button" value="Calcular" id="bottom" onclick="calcular()">
+                </p>
+
+
+                <ul id="delta" >
+                    <h2>1. Calculando o &Delta; da equação completa </h2>
+                    <li> &Delta; = b<sup>2</sup> - 4ac</li>
+                    <li> &Delta; = <span id="b2_txt"></span><sup>2</sup> - 4 &times; <span id="a_txt"></span> &times;
+                        <span id="c_txt"> </span> </li>
+                    <li> &Delta; = <span id="delta_res"> </span></li>
+                    <br>
+                     <span id="raizes_txt">Há portanto <span id="raizes"></span> raízes.
+                    </span>
+                </ul>
+
+                <ul id="bhaskara" >
+                    <h2>2. Aplicando Bhaskara:</h2>
+                    <li> &Delta; = b<sup>2</sup> - 4ac</li>
+                    <li> &Delta; = <span id="b2_txt"></span><sup>2</sup> - 4 &times; <span id="a_txt"></span> &times;
+                        <span id="c_txt"> </span> </li>
+                    <li> &Delta; = <span id="delta_res"> </span></li>
+                </ul>
+
+            </div>
+
+
+        </article>
+
+    </div>
+
+</body>
+
+</html>

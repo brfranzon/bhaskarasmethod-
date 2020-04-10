@@ -1,0 +1,86 @@
+h1#Title{
+    text-align: center;
+}
+
+div#body-div{
+    width: 600px;
+    height: 700px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 4px  rgba(0,0,0, 0.6);
+}
+
+article#article-div{
+    padding: 30px;
+    margin: 10px;
+    height: 600px;
+}
+
+article#article-div h1#calc{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    
+}
+
+article#article-div h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12pt;
+    margin-top: 25px;
+    
+}
+
+h1#equacao{
+    font-size: 25pt;
+    text-align: center;
+}
+
+span#a, span#b, span#c{
+    color: red;
+}
+
+div#equacao{
+margin: 0px;
+padding: 10px;
+height: 100px;
+width: 450px;
+position: absolute;;
+}
+
+input#a, input#b, input#c{
+    padding: 0px;
+    height: 20px;
+    width: 40px;
+    font-size: 15pt;
+    transition: 1s;
+}
+
+input#a:hover, input#b:hover, input#c:hover{
+  background-color: #cccccc;
+}
+
+p#equacao{
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+span#x{
+    font-size: 20pt;
+}
+
+p#paragrafo{
+    margin: 0em;
+    text-align: center;
+}
+
+ul#delta, ul#bhaskara{
+display: none;
+ margin-left: 30px;
+}
+
+ul#delta li, ul#bhaskara li{
+    margin-left: 30px;    
+}
+
